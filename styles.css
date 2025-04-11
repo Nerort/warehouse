@@ -102,7 +102,7 @@ a {
 /* Герой */
 .hero {
     /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Склад'); */
-    background-image:url(img/Alfalight/main.webp);
+    background-image:url(img/Sheremetyevo/Птичка-5.webp);
     background-size: cover;
     background-position: center;
     color: white;
@@ -160,7 +160,7 @@ a {
 /* Галерея */
 .objects {
     padding: 70px 0;
-    background-color: #f9f9f9;
+
 }
 
 .objects h2 {
@@ -232,6 +232,7 @@ a {
 
 .form-section {
     padding: 70px 0;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -322,6 +323,7 @@ a {
 
 .map-container {
     display: flex;
+    background-color: #f9f9f9;;
     justify-content: center;
     margin: 30px 0;
     width: 100%;
