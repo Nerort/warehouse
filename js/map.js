@@ -24,7 +24,7 @@ async function initMap() {
         markerElement.style.backgroundColor = color;
         
         markerElement.innerHTML = `
-            <a href="warehouse/objects/${site}">
+            <a href="https://nerort.github.io/warehouse/objects/${site}">
             <div class="warehouse-icon">🏭</div>
             <div class="warehouse-title">${title}</div>
             <div class="warehouse-price">${price}</div>
