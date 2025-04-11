@@ -102,7 +102,7 @@ a {
 /* Герой */
 .hero {
     /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Склад'); */
-    background-image:url(img/Вид-6.webp);
+    background-image:url(img/Alfalight/main.webp);
     background-size: cover;
     background-position: center;
     color: white;
