@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа склада</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=8f424bb9-cba2-466a-ba3b-fd014b3b0223&lang=ru_RU"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="/">Название</a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="#about-company">О компании</a></li>
+                    <li><a href="#object_id">Объекты на продажу</a></li>
+                    <li><a href="#projects-id">Проекты</a></li>
+                    <li><a href="#contacts-id">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__phone">
+                <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero1">
+        <div class="container">
+            <h1>Продажа и Аренда складов</h1>
+            <p class="hero__subtitle">Современные складские комплексы с удобной транспортной доступностью</p>
+            <a class="btn btn--primary" href="#object_id">Посмотреть объекты</a>
+            <!-- <button class="btn btn--primary" id="requestBtn">Посмотреть объекты</button> -->
+        </div>
+        </div>
+    </section>
+
+    <!-- About -->
+
+    <section class="about" id="about-company">
+        <div class="container">
+            <h2>О компании</h2>
+            <!-- <div class="about__grid"> -->
+                <!-- <div class="about__item">
+                    <div class="about__icon">📏</div>
+                    <h3>Площадь</h3>
+                    <p>Общая площадь: 5 000 м²</p>
+                    <p>Высота потолков: 10 м</p>
+                </div>
+                <div class="about__item">
+                    <div class="about__icon">📍</div>
+                    <h3>Расположение</h3>
+                    <p>Москва, 10 км от МКАД</p>
+                    <p>Удобный подъезд</p>
+                </div>
+                <div class="about__item">
+                    <div class="about__icon">🛠️</div>
+                    <h3>Коммуникации</h3>
+                    <p>Электричество: 150 кВт</p>
+                    <p>Охрана, видеонаблюдение</p>
+                </div>
+                <div class="about__item">
+                    <div class="about__icon">💰</div>
+                    <h3>Стоимость</h3>
+                    <p>Цена: 150 000 000 ₽</p>
+                    <p>Возможна рассрочка</p>
+                </div> -->
+            <div class="about__grid">
+                <p>Мы специализируемся на продаже и аренде складских помещений любого масштаба – от небольших складов до крупных логистических комплексов. Наши клиенты – это растущие бизнесы, производители, дистрибьюторы и интернет-магазины, которые ценят безопасность, удобство и выгодные условия. Мы специализируемся на продаже и аренде складских помещений любого масштаба – от небольших складов до крупных логистических комплексов. Наши клиенты – это растущие бизнесы, производители, дистрибьюторы и интернет-магазины, которые ценят безопасность, удобство и выгодные условия.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Объекты на продажу -->
+
+    <section class="objects" id="object_id">
+        <div class="container">
+            <h2>Объекты на продажу</h2>
+            <div class="objects__grid">
+
+                <div class="objects__item">
+                    <a href="#"><img src="img/Sheremetyevo/main.webp" alt="Склад Шереметьево"></a>
+                    <div><h3>Шереметьево</h3></div>
+                    <p>Площадь: 112,3 Га</p>
+                    <a href="objects/sheremetyevo.html" class="btn btn--primary">Подробнее</a>
+                </div>
+
+                <div class="objects__item">
+                    <a href="#"><img src="img/Abramcevo/main.jpg" alt="Склад 1"></a>
+                    <div><h3>Абрамцево</h3></div>
+                    <p>Площадь: 16,7 Га</p>
+                    <a href="objects/abramcevo.html" class="btn btn--primary">Подробнее</a>
+                </div>
+
+                <div class="objects__item">
+                    <a href="#"><img src="img/Alfalight/main.webp" alt="Склад 1"></a>
+                    <div><h3>Альфа Light</h3></div>
+                    <p>Площадь: 2 Га</p>
+                    <a href="objects/alfalight.html" class="btn btn--primary">Подробнее</a>
+                </div>
+
+                <div class="objects__item">
+                    <a href="#"><img src="img/Olhovka/main.jpg" alt="Склад 1"></a>
+                    <div><h3>Ольховка</h3></div>
+                    <p>Площадь: 21 Га</p>
+                    <a href="objects/olhovka.html" class="btn btn--primary">Подробнее</a>
+                </div>
+
+            </div>
+
+            <!-- Show more button -->
+            <div class="btn-center">
+                <button class="btn btn--primary show-more">Показать еще</button>
+            </div>
+
+        </div>
+    </section>
+
+<!--  -->
+
+    <section class="form-section">
+        <div class="container">
+            <h2>Расположение Объектов</h2>
+            <p>Местоположения на карте</p>
+            <div class="map-container"> 
+                <div id="map" style="width: 100%; height: 600px;"></div>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Projects -->
+    <section class="projects" id="projects-id">
+        <div class="container">
+            <h2>Проекты</h2>
+            <p>Строящиеся проекты</p>
+            <div class="objects__grid">
+
+                <div class="objects__item">
+                    <a href="#"><img src="img/Alfalight/main.webp" alt="Склад 1"></a>
+                    <div><h3>Москва</h3></div>
+                    <p>Площадь: 2 000 000 м²</p>
+                    <button class="btn btn--primary">Подробнее</button>
+                </div>
+                <div class="objects__item">
+                    <a href="#"><img src="img/Alfalight/main.webp" alt="Склад 1"></a>
+                    <div><h3>Москва</h3></div>
+                    <p>Площадь: 2 000 000 м²</p>
+                    <button class="btn btn--primary">Подробнее</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Footer -->
+
+    <footer class="footer" id="contacts-id">
+        <div class="container">
+            <div class="footer__col">
+                <h3>Компания</h3>
+                <p>© 2025 Все права защищены</p>
+            </div>
+            <div class="footer__col">
+                <h3>Контакты</h3>
+                <p>Москва, ул. Уличная, 1</p>
+                <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+            </div>
+            <div class="footer__col">
+                <h3>Соцсети</h3>
+                <div class="social-links">
+                    <a href="#">Telegram</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!--  -->
+
+    <div class="modal" id="requestModal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Оставить заявку</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <button type="submit" class="btn btn--primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/show-more.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
