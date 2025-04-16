@@ -383,7 +383,26 @@ a {
     height: 3px;
     background-color: #256A6A;
     border-radius: 2px;
+    /*  */
+    transition: all 0.3s ease;
 }
+
+/* Анимация бургера */
+.burger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+
+
+
 
 /* --- Мобильная адаптация --- */
 @media (max-width: 768px) {
