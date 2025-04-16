@@ -101,13 +101,11 @@ a {
 
 /* Герой */
 .hero {
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Склад'); */
-    background-image:url(img/Sheremetyevo/Птичка-5.webp);
+    background-image:url(img/Abramcevo/main.jpg);
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    /* padding: 180px 0 100px; */
 }
 
 .hero1 {
@@ -448,48 +446,3 @@ a {
     }
 }
 
-
-/* @media (max-width: 768px) {
-    .header .container {
-        flex-direction: column;
-    }
-
-    .header__nav {
-        margin: 20px 0;
-    }
-
-    .header__nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header__nav li {
-        margin: 10px 0;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero__subtitle {
-        font-size: 18px;
-    }
-
-
-    .burger {
-        display: flex;
-    }
-
-    .header__nav {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        width: 100%;
-        padding: 20px 0;
-    }
-
-    .header__nav.active {
-        display: flex;
-    }
-} */
