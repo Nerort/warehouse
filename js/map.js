@@ -23,7 +23,7 @@ async function initMap() {
         markerElement.className = 'warehouse-marker';
         
         markerElement.innerHTML = `
-            <a href="../objects/${site}">
+            <a href="https://nerort.github.io/warehouse/objects/${site}">
             <div class="warehouse-price">${price}</div>
             </a>
         `;
