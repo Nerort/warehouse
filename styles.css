@@ -464,9 +464,13 @@ a {
 .warehouse-price {
     font-size: 12px;
     opacity: 0.9;
-} */
+} 
 /* Стили для маркеров и подсказок */
 /* Маркеры и тултипы */
+.warehouse-price {
+    font-size: 12px;
+    opacity: 0.9;
+} 
 .warehouse-marker-container {
     position: relative;
     z-index: 1;
