@@ -34,7 +34,8 @@ async function initMap() {
                     price: "96 000 руб./м²"
                 }
             ],
-            link: "objects/sheremetyevo.html"
+            link: "objects/sheremetyevo.html",
+            tooltipPosition: "bottom" // Показывать тултип снизу
         },
         {
             coordinates: [37.833614, 55.828820],
@@ -47,7 +48,8 @@ async function initMap() {
                     price: "184 800 руб./м²"
                 }
             ],
-            link: "objects/abramcevo.html"
+            link: "objects/abramcevo.html",
+            tooltipPosition: "bottom" // Показывать тултип снизу
         },
         {
             coordinates: [38.339922, 55.423288],
@@ -60,7 +62,8 @@ async function initMap() {
                     price: "132 000 руб./м²"
                 }
             ],
-            link: "objects/alfalight.html"
+            link: "objects/alfalight.html",
+            tooltipPosition: "top" // Показывать тултип сверху (по умолчанию)
         },
         {
             coordinates: [37.894972, 55.075188],
@@ -78,7 +81,8 @@ async function initMap() {
                     price: "96 000 руб./м²"
                 }
             ],
-            link: "objects/olhovka.html"
+            link: "objects/olhovka.html",
+            tooltipPosition: "top" // Показывать тултип сверху (по умолчанию)
         }
     ];
 
@@ -91,17 +95,19 @@ async function initMap() {
             <a href="${warehouse.link}">
                 <div class="warehouse-price">${warehouse.title}</div>
             </a>
-            <div class="warehouse-tooltip">
+            <div class="warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}">
                 <div class="warehouse-tooltip-content">
                     <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
                     <h3 class="tooltip-title">${warehouse.title}</h3>
                     <div class="tooltip-prices">
                         ${warehouse.prices.map(price => `
                             <div class="tooltip-price-row">
-                                <span class="tooltip-price-type">${price.type}</span>
-                                <div class="tooltip-price-details">
-                                    <span class="tooltip-price-area">${price.area}</span>
-                                    <span class="tooltip-price-value">${price.price}</span>
+                                <div class="tooltip-price-info">
+                                    <span class="tooltip-price-type">${price.type}</span>
+                                    <div class="tooltip-price-details">
+                                        <span class="tooltip-price-area">${price.area}</span>
+                                        <span class="tooltip-price-value">${price.price}</span>
+                                    </div>
                                 </div>
                             </div>
                         `).join('')}
