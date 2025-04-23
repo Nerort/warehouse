@@ -472,9 +472,14 @@ a {
 }
 
 
-/* Стили для маркеров */
+/* Основные стили маркера */
 .warehouse-marker {
     position: relative;
+    z-index: 10; /* Базовый z-index для маркера */
+}
+
+.marker-link {
+    display: block;
     background-color: white;
     color: black;
     padding: 5px 12px;
@@ -482,15 +487,14 @@ a {
     font-weight: 700;
     font-size: 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     white-space: nowrap;
     min-width: 70px;
-    z-index: 1;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
-.warehouse-marker::after {
+.marker-link::after {
     content: "";
     position: absolute;
     bottom: -24px;
@@ -502,13 +506,12 @@ a {
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    z-index: 11;
 }
 
-/* Стили для тултипа сверху (по умолчанию) */
+/* Стили для тултипа */
 .warehouse-tooltip {
     position: absolute;
-    bottom: calc(100% + 20px);
     left: 50%;
     transform: translateX(-50%);
     width: 260px;
@@ -519,11 +522,24 @@ a {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 1000; /* Высокий z-index чтобы перекрывать другие элементы */
     font-size: 13px;
 }
 
-.warehouse-tooltip::after {
+/* Тултип сверху */
+.warehouse-tooltip:not(.tooltip-bottom) {
+    bottom: calc(100% + 20px);
+    top: auto;
+}
+
+/* Тултип снизу */
+.warehouse-tooltip.tooltip-bottom {
+    top: calc(100% + 20px);
+    bottom: auto;
+}
+
+/* Стрелка для тултипа сверху */
+.warehouse-tooltip:not(.tooltip-bottom)::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -534,16 +550,23 @@ a {
     border-color: white transparent transparent transparent;
 }
 
-/* Стили для тултипа снизу */
-.warehouse-tooltip.tooltip-bottom {
-    bottom: auto;
-    top: calc(100% + 20px);
+/* Стрелка для тултипа снизу */
+.warehouse-tooltip.tooltip-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
 }
 
-.warehouse-tooltip.tooltip-bottom::after {
-    top: auto;
-    bottom: 100%;
-    border-color: transparent transparent white transparent;
+/* При наведении - показываем тултип поверх всех элементов */
+.warehouse-marker:hover .warehouse-tooltip {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1001; /* Еще выше при показе */
 }
 
 /* Общие стили для содержимого тултипа */
