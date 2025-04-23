@@ -97,9 +97,9 @@ async function initMap() {
             </div>
         `;
     
-        const tooltip = document.createElement('div');
-        tooltip.className = `warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}`;
-        tooltip.innerHTML = `
+        const tooltipElement = document.createElement('div');
+        tooltipElement.className = `warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}`;
+        tooltipElement.innerHTML = `
             <div class="warehouse-tooltip-content">
                 <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
                 <h3 class="tooltip-title">${warehouse.title}</h3>
@@ -119,28 +119,28 @@ async function initMap() {
                 <a href="${warehouse.link}" class="btn btn--primary btn--small">Подробнее</a>
             </div>
         `;
-        tooltip.style.position = 'absolute';
-        tooltip.style.display = 'none';
     
-        document.body.appendChild(tooltip);
+        // Добавляем тултип в контейнер тултипов
+        document.getElementById('tooltip-container').appendChild(tooltipElement);
     
-        // Показываем тултип на hover
-        markerElement.addEventListener('mouseenter', (e) => {
-            const rect = markerElement.getBoundingClientRect();
-            tooltip.style.left = `${rect.left + window.scrollX}px`;
-            tooltip.style.top = `${warehouse.tooltipPosition === 'bottom'
-                ? rect.bottom + 10 + window.scrollY
-                : rect.top - tooltip.offsetHeight - 10 + window.scrollY}px`;
-            tooltip.style.display = 'block';
-            tooltip.style.zIndex = 9999;
+        // Обработчики событий для отображения тултипа
+        markerElement.addEventListener('mouseenter', () => {
+            tooltipElement.style.opacity = '1';
+            tooltipElement.style.visibility = 'visible';
+            // Позиционирование тултипа относительно маркера
+            const markerRect = markerElement.getBoundingClientRect();
+            tooltipElement.style.left = `${markerRect.left + window.scrollX}px`;
+            tooltipElement.style.top = `${markerRect.top + window.scrollY - tooltipElement.offsetHeight}px`;
         });
     
         markerElement.addEventListener('mouseleave', () => {
-            tooltip.style.display = 'none';
+            tooltipElement.style.opacity = '0';
+            tooltipElement.style.visibility = 'hidden';
         });
     
         return new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
     }
+
 
 
     warehouses.forEach(warehouse => {
