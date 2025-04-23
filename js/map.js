@@ -36,25 +36,25 @@ async function initMap() {
     map.addChild(createWarehouseMarker(
         [37.381105, 56.000201], 
         '112,3 Га',
-        'sheremetyevo.html'
+        'warehousepres.pdf'
     ));
 
     map.addChild(createWarehouseMarker(
         [37.833614, 55.828820], 
         '16,7 Га',
-        'abramcevo.html'
+        'warehousepres.pdf'
     ));
     
     map.addChild(createWarehouseMarker(
         [38.339922, 55.423288], 
         '2 Га',
-        'alfalight.html'
+        'warehousepres.pdf'
     ));
     
     map.addChild(createWarehouseMarker(
         [37.894972, 55.075188], 
         '21 Га',
-        'olhovka.html'
+        'warehousepres.pdf'
     ));
 }
 
