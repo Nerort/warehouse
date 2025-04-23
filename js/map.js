@@ -94,17 +94,19 @@ async function initMap() {
             <div class="warehouse-tooltip">
                 <div class="warehouse-tooltip-content">
                     <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
-                    <h3>${warehouse.title}</h3>
-                    <div class="price-block">
+                    <h3 class="tooltip-title">${warehouse.title}</h3>
+                    <div class="tooltip-prices">
                         ${warehouse.prices.map(price => `
-                            <div class="price-item">
-                                <span class="price-type">${price.type}</span><br>
-                                ${price.area}<br>
-                                <span class="price-value">${price.price}</span> в т.ч. НДС
+                            <div class="tooltip-price-row">
+                                <span class="tooltip-price-type">${price.type}</span>
+                                <div class="tooltip-price-details">
+                                    <span class="tooltip-price-area">${price.area}</span>
+                                    <span class="tooltip-price-value">${price.price}</span>
+                                </div>
                             </div>
                         `).join('')}
                     </div>
-                    <a href="${warehouse.link}" class="btn btn--primary">Подробнее</a>
+                    <a href="${warehouse.link}" class="btn btn--primary btn--small">Подробнее</a>
                 </div>
             </div>
         `;
