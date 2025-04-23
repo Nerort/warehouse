@@ -16,7 +16,6 @@ async function initMap() {
     map.addChild(new YMapDefaultSchemeLayer());
     map.addChild(new YMapDefaultFeaturesLayer());
 
-    // Данные для маркеров
     const warehouses = [
         {
             coordinates: [37.381105, 56.000201],
@@ -35,7 +34,7 @@ async function initMap() {
                 }
             ],
             link: "objects/sheremetyevo.html",
-            tooltipPosition: "bottom" // Показывать тултип снизу
+            tooltipPosition: "bottom"
         },
         {
             coordinates: [37.833614, 55.828820],
@@ -49,7 +48,7 @@ async function initMap() {
                 }
             ],
             link: "objects/abramcevo.html",
-            tooltipPosition: "bottom" // Показывать тултип снизу
+            tooltipPosition: "bottom"
         },
         {
             coordinates: [38.339922, 55.423288],
@@ -63,7 +62,7 @@ async function initMap() {
                 }
             ],
             link: "objects/alfalight.html",
-            tooltipPosition: "top" // Показывать тултип сверху (по умолчанию)
+            tooltipPosition: "top"
         },
         {
             coordinates: [37.894972, 55.075188],
@@ -82,19 +81,20 @@ async function initMap() {
                 }
             ],
             link: "objects/olhovka.html",
-            tooltipPosition: "top" // Показывать тултип сверху (по умолчанию)
+            tooltipPosition: "top"
         }
     ];
 
-    // Функция для создания маркера
     function createWarehouseMarker(warehouse) {
         const markerElement = document.createElement('div');
-        markerElement.className = 'warehouse-marker';
+        markerElement.className = 'warehouse-marker-container';
         
         markerElement.innerHTML = `
-            <a href="${warehouse.link}" class="marker-link">
-                <div class="warehouse-price">${warehouse.title}</div>
-            </a>
+            <div class="warehouse-marker">
+                <a href="${warehouse.link}" class="marker-link">
+                    <div class="warehouse-price">${warehouse.title}</div>
+                </a>
+            </div>
             <div class="warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}">
                 <div class="warehouse-tooltip-content">
                     <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
@@ -117,11 +117,9 @@ async function initMap() {
             </div>
         `;
         
-        const marker = new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
-        return marker;
+        return new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
     }
 
-    // Добавляем маркеры
     warehouses.forEach(warehouse => {
         map.addChild(createWarehouseMarker(warehouse));
     });
