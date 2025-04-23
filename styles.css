@@ -588,6 +588,92 @@ a {
     width: 100%;
 }
 
+/*  */
+
+/* Стили для компактного тултипа */
+.warehouse-tooltip {
+    position: absolute;
+    bottom: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-size: 13px;
+}
+
+.tooltip-title {
+    font-size: 16px;
+    color: #256A6A;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.tooltip-prices {
+    margin: 10px 0;
+}
+
+.tooltip-price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tooltip-price-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.tooltip-price-type {
+    font-weight: 500;
+    color: #256A6A;
+    flex: 1;
+    padding-right: 10px;
+}
+
+.tooltip-price-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 80px;
+}
+
+.tooltip-price-area {
+    font-size: 12px;
+    color: #666;
+}
+
+.tooltip-price-value {
+    font-weight: 600;
+    color: #064348;
+    font-size: 14px;
+}
+
+.btn--small {
+    padding: 8px 15px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.warehouse-tooltip img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+/*  */
+
+
 
 /* Burger menu */
 
