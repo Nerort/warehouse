@@ -92,7 +92,7 @@ async function initMap() {
         markerElement.className = 'warehouse-marker';
         
         markerElement.innerHTML = `
-            <a href="${warehouse.link}">
+            <a href="${warehouse.link}" class="marker-link">
                 <div class="warehouse-price">${warehouse.title}</div>
             </a>
             <div class="warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}">
