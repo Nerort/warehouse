@@ -535,6 +535,7 @@ a {
 /* Тултип снизу */
 .warehouse-tooltip.tooltip-bottom {
     top: calc(100% + 20px);
+    z-index: 1000;
     bottom: auto;
 }
 
@@ -566,6 +567,9 @@ a {
 .warehouse-marker:hover .warehouse-tooltip {
     opacity: 1;
     visibility: visible;
+    z-index: 1001; /* Еще выше при показе */
+}
+.warehouse-marker:hover .warehouse-tooltip.tooltip-bottom {
     z-index: 1001; /* Еще выше при показе */
 }
 
