@@ -88,60 +88,37 @@ async function initMap() {
     function createWarehouseMarker(warehouse) {
         const markerElement = document.createElement('div');
         markerElement.className = 'warehouse-marker-container';
-    
+        
         markerElement.innerHTML = `
             <div class="warehouse-marker">
                 <a href="${warehouse.link}" class="marker-link">
                     <div class="warehouse-price">${warehouse.title}</div>
                 </a>
             </div>
-        `;
-    
-        const tooltipElement = document.createElement('div');
-        tooltipElement.className = `warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}`;
-        tooltipElement.innerHTML = `
-            <div class="warehouse-tooltip-content">
-                <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
-                <h3 class="tooltip-title">${warehouse.title}</h3>
-                <div class="tooltip-prices">
-                    ${warehouse.prices.map(price => `
-                        <div class="tooltip-price-row">
-                            <div class="tooltip-price-info">
-                                <span class="tooltip-price-type">${price.type}</span>
-                                <div class="tooltip-price-details">
-                                    <span class="tooltip-price-area">${price.area}</span>
-                                    <span class="tooltip-price-value">${price.price}</span>
+            <div class="warehouse-tooltip ${warehouse.tooltipPosition === 'bottom' ? 'tooltip-bottom' : ''}">
+                <div class="warehouse-tooltip-content">
+                    <a href="${warehouse.link}"><img src="${warehouse.image}" alt="${warehouse.title}"></a>
+                    <h3 class="tooltip-title">${warehouse.title}</h3>
+                    <div class="tooltip-prices">
+                        ${warehouse.prices.map(price => `
+                            <div class="tooltip-price-row">
+                                <div class="tooltip-price-info">
+                                    <span class="tooltip-price-type">${price.type}</span>
+                                    <div class="tooltip-price-details">
+                                        <span class="tooltip-price-area">${price.area}</span>
+                                        <span class="tooltip-price-value">${price.price}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `).join('')}
+                        `).join('')}
+                    </div>
+                    <a href="${warehouse.link}" class="btn btn--primary btn--small">Подробнее</a>
                 </div>
-                <a href="${warehouse.link}" class="btn btn--primary btn--small">Подробнее</a>
             </div>
         `;
-    
-        // Добавляем тултип в контейнер тултипов
-        document.getElementById('tooltip-container').appendChild(tooltipElement);
-    
-        // Обработчики событий для отображения тултипа
-        markerElement.addEventListener('mouseenter', () => {
-            tooltipElement.style.opacity = '1';
-            tooltipElement.style.visibility = 'visible';
-            // Позиционирование тултипа относительно маркера
-            const markerRect = markerElement.getBoundingClientRect();
-            tooltipElement.style.left = `${markerRect.left + window.scrollX}px`;
-            tooltipElement.style.top = `${markerRect.top + window.scrollY - tooltipElement.offsetHeight}px`;
-        });
-    
-        markerElement.addEventListener('mouseleave', () => {
-            tooltipElement.style.opacity = '0';
-            tooltipElement.style.visibility = 'hidden';
-        });
-    
+        
         return new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
     }
-
-
 
     warehouses.forEach(warehouse => {
         map.addChild(createWarehouseMarker(warehouse));
