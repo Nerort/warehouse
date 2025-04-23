@@ -114,7 +114,7 @@ a {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 200px 0 120px;
+    padding: 190px 0 120px;
 }
 
 .hero h1 {
@@ -172,20 +172,118 @@ a {
     gap: 20px;
 }
 
-.objects__item {
+/* .objects__item {
     text-align: center;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+} */
+
+.objects__item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
+/*  */
+.objects__item h3 {
+    font-size: 22px;
+    color: #256A6A;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+/*  */
 
 .objects__item h2 {
     margin-bottom: 13px;
 }
 
-.objects__item p {
+/* .objects__item p {
     margin-bottom: 22px;
+} */
+
+.objects__item p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    flex-grow: 1;
 }
+
+.objects__item .price-block {
+    /*  */
+    display: flex;
+    /* flex-grow: 1; */
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 0 20px 0;
+    /*  */
+    text-align: left;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    padding: 15px;
+    /* margin-bottom: 20px; */
+}
+
+#block-alfa {
+    /*  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 0 20px 0;
+    /*  */
+    text-align: left;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    padding: 25px;
+    /* margin-bottom: 20px; */
+}
+
+#block-olhovka {
+        /*  */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 0 20px 0;
+        /*  */
+        text-align: left;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        padding: 25px;
+        /* margin-bottom: 20px; */
+}
+
+.objects__item .price-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.objects__item .price-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.objects__item .price-type {
+    font-weight: 600;
+    color: #256A6A;
+}
+
+.objects__item .price-value {
+    font-weight: 700;
+    color: #064348;
+    font-size: 18px;
+}
+
+.objects__item .btn {
+    align-self: center;
+    margin-top: auto;
+}
+
+/*  */
 
 .objects__item img {
     width: 100%;
@@ -211,7 +309,8 @@ a {
 }
 
 .objects__item.is-visible {
-    display: block;
+    display: flex;
+    /* display: block; */
 }
 
 .show-more {
