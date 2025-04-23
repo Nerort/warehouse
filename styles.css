@@ -485,6 +485,7 @@ a {
     display: inline-block;
     background-color: white;
     color: black;
+    white-space: nowrap;
     padding: 5px 12px;
     border-radius: 12px;
     font-weight: 700;
@@ -507,7 +508,7 @@ a {
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    z-index: 11;
+    z-index: 1;
 }
 
 .warehouse-tooltip {
@@ -559,7 +560,7 @@ a {
 .warehouse-marker-container:hover .warehouse-tooltip {
     opacity: 1;
     visibility: visible;
-    z-index: 1001;
+    z-index: 9999;
 }
 
 .warehouse-tooltip-content {
