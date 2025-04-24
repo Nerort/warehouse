@@ -91,7 +91,7 @@ async function initMap() {
         
         markerElement.innerHTML = `
             <div class="warehouse-marker">
-                <a href="#" class="marker-link">
+                <a href="${warehouse.link}" class="marker-link">
                     <div class="warehouse-price">${warehouse.title}</div>
                 </a>
             </div>
@@ -119,13 +119,23 @@ async function initMap() {
         
         const marker = new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
         
-        // Добавляем обработчик клика на маркер
-        markerElement.querySelector('.marker-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            // Центрируем карту на маркере с увеличением zoom
-            map.setLocation({
-                center: warehouse.coordinates
-            });
+        // Добавляем обработчики наведения
+        const markerLink = markerElement.querySelector('.marker-link');
+        let hoverTimeout;
+        
+        markerLink.addEventListener('mouseenter', () => {
+            // Задержка перед центрированием (200ms)
+            hoverTimeout = setTimeout(() => {
+                map.setLocation({
+                    center: warehouse.coordinates,
+                    duration: 300 // Плавная анимация 300ms
+                });
+            }, 200);
+        });
+        
+        markerLink.addEventListener('mouseleave', () => {
+            // Отменяем центрирование если курсор ушел до истечения задержки
+            clearTimeout(hoverTimeout);
         });
         
         return marker;
