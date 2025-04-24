@@ -129,7 +129,7 @@ async function initMap() {
                 const offsetY = 0.8;
                 const centeredCoords = [
                 warehouse.coordinates[0],
-                warehouse.coordinates[1] - offsetY
+                warehouse.coordinates[1] + offsetY
             ];
                 
                 map.setLocation({
