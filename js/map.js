@@ -33,7 +33,7 @@ async function initMap() {
                     price: "96 000 руб./м²"
                 }
             ],
-            link: "objects/sheremetyevo.html",
+            link: "objects/warehousepres.pdf",
             tooltipPosition: "top"
         },
         {
@@ -47,7 +47,7 @@ async function initMap() {
                     price: "184 800 руб./м²"
                 }
             ],
-            link: "objects/abramcevo.html",
+            link: "objects/warehousepres.pdf",
             tooltipPosition: "top"
         },
         {
@@ -61,7 +61,7 @@ async function initMap() {
                     price: "132 000 руб./м²"
                 }
             ],
-            link: "objects/alfalight.html",
+            link: "objects/warehousepres.pdf",
             tooltipPosition: "top"
         },
         {
@@ -80,7 +80,7 @@ async function initMap() {
                     price: "96 000 руб./м²"
                 }
             ],
-            link: "objects/olhovka.html",
+            link: "objects/warehousepres.pdf",
             tooltipPosition: "top"
         }
     ];
@@ -126,7 +126,7 @@ async function initMap() {
         markerLink.addEventListener('mouseenter', () => {
             // Задержка перед центрированием (200ms)
             hoverTimeout = setTimeout(() => {
-                const offsetY = 0.305;
+                const offsetY = 0.3;
                 const centeredCoords = [
                 warehouse.coordinates[0],
                 warehouse.coordinates[1] + offsetY
