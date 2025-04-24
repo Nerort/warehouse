@@ -126,11 +126,17 @@ async function initMap() {
         markerLink.addEventListener('mouseenter', () => {
             // Задержка перед центрированием (200ms)
             hoverTimeout = setTimeout(() => {
+                const offsetY = 0.02;
+                const centeredCoords = [
+                warehouse.coordinates[0],
+                warehouse.coordinates[1] - offsetY
+            ];
+                
                 map.setLocation({
-                    center: warehouse.coordinates,
+                    center: centeredCoords,
                     duration: 300 // Плавная анимация 300ms
                 });
-            }, 200);
+            }, 150);
         });
         
         markerLink.addEventListener('mouseleave', () => {
