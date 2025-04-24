@@ -541,7 +541,7 @@ a {
 }
 
 .warehouse-tooltip:not(.tooltip-bottom) {
-    bottom: calc(100% + 25px);
+    bottom: calc(100% + 15px);
 }
 
 .warehouse-tooltip.tooltip-bottom {
