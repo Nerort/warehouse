@@ -91,7 +91,7 @@ async function initMap() {
         
         markerElement.innerHTML = `
             <div class="warehouse-marker">
-                <a href="${warehouse.link}" class="marker-link">
+                <a href="#" class="marker-link">
                     <div class="warehouse-price">${warehouse.title}</div>
                 </a>
             </div>
@@ -117,9 +117,21 @@ async function initMap() {
             </div>
         `;
         
-        return new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
+        const marker = new YMapMarker({ coordinates: warehouse.coordinates }, markerElement);
+        
+        // Добавляем обработчик клика на маркер
+        markerElement.querySelector('.marker-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Центрируем карту на маркере с увеличением zoom
+            map.setLocation({
+                center: warehouse.coordinates
+            });
+        });
+        
+        return marker;
     }
 
+    // Добавляем все маркеры на карту
     warehouses.forEach(warehouse => {
         map.addChild(createWarehouseMarker(warehouse));
     });
