@@ -128,7 +128,7 @@ async function initMap() {
             hoverTimeout = setTimeout(() => {
                 const offsetY = 0.3;
                 const centeredCoords = [
-                warehouse.coordinates[0] + 0.13,
+                warehouse.coordinates[0] + 0.17,
                 warehouse.coordinates[1] + offsetY
             ];
                 
