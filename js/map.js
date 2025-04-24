@@ -126,7 +126,7 @@ async function initMap() {
         markerLink.addEventListener('mouseenter', () => {
             // Задержка перед центрированием (200ms)
             hoverTimeout = setTimeout(() => {
-                const offsetY = 0.5;
+                const offsetY = 0.37;
                 const centeredCoords = [
                 warehouse.coordinates[0],
                 warehouse.coordinates[1] + offsetY
