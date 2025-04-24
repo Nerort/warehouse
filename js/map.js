@@ -34,7 +34,7 @@ async function initMap() {
                 }
             ],
             link: "objects/sheremetyevo.html",
-            tooltipPosition: "bottom"
+            tooltipPosition: "top"
         },
         {
             coordinates: [37.833614, 55.828820],
@@ -48,7 +48,7 @@ async function initMap() {
                 }
             ],
             link: "objects/abramcevo.html",
-            tooltipPosition: "bottom"
+            tooltipPosition: "top"
         },
         {
             coordinates: [38.339922, 55.423288],
@@ -126,7 +126,7 @@ async function initMap() {
         markerLink.addEventListener('mouseenter', () => {
             // Задержка перед центрированием (200ms)
             hoverTimeout = setTimeout(() => {
-                const offsetY = 0.02;
+                const offsetY = 0.2;
                 const centeredCoords = [
                 warehouse.coordinates[0],
                 warehouse.coordinates[1] - offsetY
